@@ -1,11 +1,9 @@
-import StudentInfo from 'app/StudentInfo'
+import Header from 'app/Header'
 
 export default function Page() {
     return(
         <main>
-            <h1>My Shopping List</h1>
-            <StudentInfo/>
-
+            <Header title="My Shopping List" />
         </main>
     )
 }

@@ -8,6 +8,7 @@ export default function NewItem({onAddItem}) {
 
     const handleSubmit = (event) => {
         const item = ({
+            id : Date.now(),
             name: name,
             quantity: quantity,
             category: category
@@ -18,11 +19,14 @@ export default function NewItem({onAddItem}) {
         }
         else {
         console.log(item);
+        {/*}
         alert('Buying' + ' ' + quantity + ' ' + name + ' ' + 'from' + ' ' + category + ' ' + 'section.'),
+        */}
         onAddItem(item); //invoke addItem function using item as argument
         setName("");
         setQuantity(1);
         setCategory("Produce");
+        
         
     }
     };

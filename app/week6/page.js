@@ -5,8 +5,9 @@ import NewItem from './new-item'
 import itemsData from "./items.json"
 import { useState } from 'react'
 
+
 export default function Page() {
-const [itemsList, setItemsList] = useState(itemsData)
+const [itemsList, setItemsList] = useState(itemsData);
 
 
 const handleAddItem = (newItem) => {
@@ -14,6 +15,7 @@ const handleAddItem = (newItem) => {
 	const updatedItemsList = [...itemsList, newItem];
 	//Update setItemsList with new list(updatedItemsList)
 	setItemsList(updatedItemsList);
+	console.log(updatedItemsList);
 }
 
     return(

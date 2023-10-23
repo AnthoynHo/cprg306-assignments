@@ -5,9 +5,7 @@ export default function Page(){
         <div>
             <p>Name: Anthony</p> 
             <p>CPRG 306 B</p>  
-            <p>
-                <Link href="https://github.com/AnthoynHo/cprg306-assignments">https://github.com/AnthoynHo/cprg306-assignments</Link>
-            </p> 
+                <Link href="https://github.com/AnthoynHo/cprg306-assignments">https://github.com/AnthoynHo/cprg306-assignments</Link>            
         </div>
     )
 }

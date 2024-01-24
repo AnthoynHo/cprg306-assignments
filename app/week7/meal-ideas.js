@@ -38,9 +38,13 @@ export default function MealIdeas({ ingredient }) {
 async function fetchMealIdeas(ingredient) {
     try {
         console.log("Fetching meals for", ingredient);
+
         const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`);
+
         const data = await response.json();
+
         console.log("Fetched meals for", ingredient, data);
+        
         return data.meals || []; // Return an empty array if 'data.meals' is undefined
     } catch (error) {
         console.error("Error fetching meals:", error);

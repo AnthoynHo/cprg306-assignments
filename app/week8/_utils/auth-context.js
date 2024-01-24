@@ -6,6 +6,8 @@ import {
   signOut,
   onAuthStateChanged,
   GithubAuthProvider,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "./firebase";
  
@@ -17,6 +19,14 @@ export const AuthContextProvider = ({ children }) => {
   const gitHubSignIn = () => {
     const provider = new GithubAuthProvider();
     return signInWithPopup(auth, provider);
+  };
+
+  const emailPasswordSignIn = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+  
+  const emailPasswordSignUp = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
   };
  
   const firebaseSignOut = () => {
@@ -31,7 +41,7 @@ export const AuthContextProvider = ({ children }) => {
   }, [user]);
  
   return (
-    <AuthContext.Provider value={{ user, gitHubSignIn, firebaseSignOut }}>
+    <AuthContext.Provider value={{ user, gitHubSignIn, firebaseSignOut, emailPasswordSignIn, emailPasswordSignUp }}>
       {children}
     </AuthContext.Provider>
   );
